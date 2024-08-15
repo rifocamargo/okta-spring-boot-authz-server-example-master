@@ -1,0 +1,24 @@
+server:
+  port: 9999
+  servlet:
+    ##context-path: /auth
+    session:
+      cookie:
+        name: SSO-SESSION
+  ssl:
+    enabled: true
+    key-alias: 1
+    key-store: /home/ricardocamargo/certificates/localhost.jks
+    key-store-password: lecom181
+user:
+  oauth:
+    clientId: service-a
+    clientSecret: secret
+    redirectUris: https://localhost:8082/login/oauth2/code/
+    user:
+      username: user
+      password: secret
+
+logging:
+  level:
+    org.springframework.security: DEBUG
